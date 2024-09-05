@@ -103,7 +103,7 @@ function App() {
       setShowDowntime(true);
       sessionStorage.setItem("downtimeToken", "true");
     }
-  }, [maintenance]);
+  }, [setShowDowntime, maintenance]);
 
   return (
     <Layout>
@@ -114,13 +114,12 @@ function App() {
           <Route path="/s/:query" element={<QuickSearch />} />
           <Route path="/search/:type" element={<Navigate to="/browse" />} />
           <Route path="/search/:type/:query?" element={<QueryView />} />
-          
           {/* pages */}
           <Route
             path="/media/:media"
             element={
               <LegacyUrlView>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={null}>
                   <PlayerView />
                 </Suspense>
               </LegacyUrlView>
@@ -130,7 +129,7 @@ function App() {
             path="/media/:media/:season/:episode"
             element={
               <LegacyUrlView>
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={null}>
                   <PlayerView />
                 </Suspense>
               </LegacyUrlView>
@@ -159,7 +158,7 @@ function App() {
           <Route
             path="/settings"
             element={
-              <Suspense fallback={<div>Loading...</div>}>
+              <Suspense fallback={null}>
                 <SettingsPage />
               </Suspense>
             }
