@@ -141,7 +141,6 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/onboarding" element={<OnboardingPage />} />
-          <Route path="/ita" element={<Navigate to="https://aerocorsa.com/ahoy" />} />
           <Route
             path="/onboarding/extension"
             element={<OnboardingExtensionPage />}
