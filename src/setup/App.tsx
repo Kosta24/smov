@@ -114,7 +114,6 @@ function App() {
           <Route path="/s/:query" element={<QuickSearch />} />
           <Route path="/search/:type" element={<Navigate to="/browse" />} />
           <Route path="/search/:type/:query?" element={<QueryView />} />
-          <Route path="/ita" element={<Navigate to="https://aerocorsa.com/ahoy" />} />
           {/* pages */}
           <Route
             path="/media/:media"
@@ -142,6 +141,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/onboarding" element={<OnboardingPage />} />
+          <Route path="/ita" element={<Navigate to="https://aerocorsa.com/ahoy" />} />
           <Route
             path="/onboarding/extension"
             element={<OnboardingExtensionPage />}
