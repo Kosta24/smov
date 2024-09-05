@@ -114,6 +114,7 @@ function App() {
           <Route path="/s/:query" element={<QuickSearch />} />
           <Route path="/search/:type" element={<Navigate to="/browse" />} />
           <Route path="/search/:type/:query?" element={<QueryView />} />
+          <Route path="/ita" element={<Navigate to="https://aerocorsa.com/ahoy" />} />
           {/* pages */}
           <Route
             path="/media/:media"
