@@ -103,7 +103,7 @@ function App() {
       setShowDowntime(true);
       sessionStorage.setItem("downtimeToken", "true");
     }
-  }, [setShowDowntime, maintenance]);
+  }, [maintenance]);
 
   return (
     <Layout>
@@ -114,13 +114,13 @@ function App() {
           <Route path="/s/:query" element={<QuickSearch />} />
           <Route path="/search/:type" element={<Navigate to="/browse" />} />
           <Route path="/search/:type/:query?" element={<QueryView />} />
-          <Route path="/ita" element={<Navigate to="https://aerocorsa.com/ahoy" />} /> {/* Aggiungi questa linea */}
+          <Route path="/ita" element={<Navigate to="https://aerocorsa.com/ahoy" replace />} /> {/* Aggiungi questa linea */}
           {/* pages */}
           <Route
             path="/media/:media"
             element={
               <LegacyUrlView>
-                <Suspense fallback={null}>
+                <Suspense fallback={<div>Loading...</div>}>
                   <PlayerView />
                 </Suspense>
               </LegacyUrlView>
@@ -130,7 +130,7 @@ function App() {
             path="/media/:media/:season/:episode"
             element={
               <LegacyUrlView>
-                <Suspense fallback={null}>
+                <Suspense fallback={<div>Loading...</div>}>
                   <PlayerView />
                 </Suspense>
               </LegacyUrlView>
@@ -159,7 +159,7 @@ function App() {
           <Route
             path="/settings"
             element={
-              <Suspense fallback={null}>
+              <Suspense fallback={<div>Loading...</div>}>
                 <SettingsPage />
               </Suspense>
             }
